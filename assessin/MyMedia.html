@@ -6,32 +6,96 @@
     <title>My Media</title>
   </head>
 
+   <!-- ***
+        Whenever you do any style stuff, the rules are always specified in the same format:
+
+        property-name: value;
+
+        So, if you want to specify a background colour, you would write:
+
+        background-color: #f79d77;
+
+        You don't need value=""
+
+        Putting this in as the value for the style attribute would give you:
+
+        <body style="background-color: #f79d77">
+
+        You can add multiple rules, just separate them out with ; in between each. If you want to change the font-family on your site
+        for example, the body is a great place to do this as it'll filter down to everything else.
+
+        <body style="background-color: #f79d77; font-family: sans-serif">
+
+        This is all specifying style using the style attribute. It would be better to include your style rules either 
+        at the top of the page, or even better, in a separate style sheet. The formatting of the rules is still the same. 
+        Have a look at the video on Blackboard about selecting elements to style with CSS.
+        *** -->
+  
   <body style="background-color: value="#f79d77">
   <body>
+    
+    <!-- ***
+         You've got various uses of id and class here. You don't need them. The id on the <nav> element is to be able to do 
+         something with it with JavaScript. Without also including that JavaScript it's redundance.
+                                                
+         Similarly, the class names here were for adding some CSS rules to these things, but that's not happening here either.
+                                                
+         The 'fas' and 'fa-bars' class names relate to a third-party plugin called font awesome that gives you access to 
+         lots of icons. It's really great, and fairly easy to use, but to do so you need to include their JavaScripts file.
+          
+         This menu could have been written as:
+         <nav>
+            <a href="Home.html">Home</a>
+            <a href="MyMedia.html">My Media</a>
+          </nav>                             
+          
+          With some styling applied to make those <a> elements look like menu buttons or some such, instead of normal text links. 
+          *** -->
+         
     <nav id="mainMenu">
       <i class="fas fa-bars" id="menu button"></i>
       <div class="menuItem"><a href="Home.html">Home</a></div>
       <div class="menuItem"><a href="MyMedia.html">My Media</a></div>
       </nav>
+                                                  
+      <!-- ***
+           <style> elements provide information about the page - they should therefore go inside the <head> section.
+           *** -->
+                                                  
       <style>
         h1, h2, h3 {
           font-family: Comic-Sans, Serif, Georgia;
-        font-weight: bold;
-      font-size: 30px;
-    text-align: center;
-    color: green;
-    background-colour: yellow;
-    }
-    </style>
+          font-weight: bold;
+          font-size: 30px;
+          text-align: center;
+          color: green;
+          background-colour: yellow;
+        }
+      </style>
+                                                  
+                                                  
     <h1> My Media </h1>
     <p> Welcome to My Media page! Here you will find all the videos I have edited along with my Photography. </p>
+                                                  
+    <!-- To include comments - that is code that the browser ignores - you need to start any comment with <!-- and end with -->
 <! Video >
-    <h2> Video </h2>
+                                                  
+    <h2>Video</h2>
     <video controls>
- <source src="vid/MCBadThings.mp4" type='video/mp4' />
-  <p>Your browser does not support the video element. Please click <a href='vid/MCBadThings.mp4'>here</a> to download an mp4 of the video.</p>
-</video>
+      <source src="vid/MCBadThings.mp4" type='video/mp4' />
+      <!-- *** There should be at least one more <source> element here, providing MCBadThings in either ogg or webm format. *** -->
+      <p>Your browser does not support the video element. Please click <a href='vid/MCBadThings.mp4'>here</a> to download an mp4 of the video.</p>
+  </video>
+                                       
 <! Photography >
+                                       
+     <!--- ***
+     Headings aren't intended to increment down the page, h1 to h6. The number denotes their relative importance, not their position.
+                                       
+     Your main heading (My Media) is a h1. All these other headings are subheadings of that - all at the same level - so they should 
+     all be h2.
+     *** -->
+     
     <h3> Photography </h3>
     <img
     style='max-width: 50%'
@@ -48,9 +112,11 @@
 <h4> Audio </h4>
 <p> Still Feel - Half Alive </P>
     <audio controls>
-  <source src="aud/song.mp3" type='audio/mpeg' />
-</audio>
+      <source src="aud/song.mp3" type='audio/mpeg' />
+      <!-- *** There should be at least one more <source> element here, with the song in either ogg or wav format. *** -->
+    </audio>
 
+    <!-- *** This fallback should be inside the <audio> element. *** -->
     <p>Your browser does not support the audio element. Please click <a href='audio/halfalive - still feel. [VIDEO].mp3'>here</a> to download an mp3 of the audio.</p>
   <p style="color: red"> Disclaimer, i do not own this audio, this is for education purposes only</p>
   </body>
